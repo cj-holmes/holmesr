@@ -1,0 +1,49 @@
+---
+output: github_document
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  fig.width = 8
+)
+```
+
+# holmesr <img src="data-raw/hex-logo/hex-logo.png" align="right" height="139"/>
+
+The goal of `holmesr` is to collate (and make portable) a miscellany of my personal R functions.
+
+Some of the more useful functions
+
+* Visualisation
+  * `dists()`
+  * `numeric_dists()`
+  * `categoric_dists()`
+  * `rotate_x_labs()`
+  * `geom_origin()`
+  * `move_legend()`
+  * `theme_holmes()`
+  
+* Data wrangling
+  * `remove_otliers()`
+  * `print_all()`
+
+Install package, add it to the search path and set the plotting theme
+```{r}
+library(holmesr)
+
+# Set the homesr plotting theme
+ggplot2::theme_set(theme_holmes())
+```
+
+### Visualising dataframe distributions
+```{r fig.width=12, fig.height=7}
+dists(ggplot2::diamonds)
+```
+
+```{r fig.width=12, fig.height=5}
+dists(dplyr::starwars, remove_outliers = TRUE, cols=c(-name, -sex))
+```
+

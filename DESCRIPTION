@@ -1,0 +1,22 @@
+Package: holmesr
+Type: Package
+Title: A collection of miscellaneous helper functions
+Version: 0.1.0
+Author: Who wrote it
+Maintainer: Chris Holmes <c.holmes4@gmail.com>
+Description: More about what it does (maybe more than one line)
+    Use four spaces when indenting paragraphs within the Description.
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1
+Imports: 
+    ggplot2,
+    tibble,
+    magrittr,
+    tidyr,
+    dplyr,
+    purrr,
+    forcats,
+    stringr,
+    patchwork
