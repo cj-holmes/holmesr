@@ -1,11 +1,14 @@
-Package: holmesr
 Type: Package
+Package: holmesr
 Title: A collection of miscellaneous helper functions
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: Chris Holmes <c.holmes4@gmail.com>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Authors@R: 
+    person(given = "Holmes",
+           family = "Chris",
+           role = c("aut", "cre"),
+           email = "c.holmes4@gmail.com")
+Description: A portable collection of my own helper functions.
+    Intended for my own personal use - hosted on github for ease of access
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
