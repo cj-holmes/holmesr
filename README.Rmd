@@ -39,11 +39,14 @@ ggplot2::theme_set(theme_holmes())
 ```
 
 ### Visualising dataframe distributions
+Probably the most useful function is `dists()` which returns a plot of the distributions of numeric and categorical columns in a dataframe.
 ```{r fig.width=12, fig.height=7}
 dists(ggplot2::diamonds)
 ```
 
+Ther are several arguments for customisation, including `remove_outliers` to remove outliers before numerical distirutions are computed, and `cols` for selecting the columns to include/not include with tidyselect semantics. For instance, when a categorical column contains unique values for every row (the `dplyr::starwars` `name` column) it is useful to not plot its distribution (below)... 
 ```{r fig.width=12, fig.height=5}
 dists(dplyr::starwars, remove_outliers = TRUE, cols=c(-name, -sex))
 ```
 
+Arguments passed to `...` are passed on to `patchwork::wrap_plots` and control the layout of the visualisation (`ncol`, `nrow`, `widths`, `heights`, etc...)
