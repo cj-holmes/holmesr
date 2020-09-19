@@ -1,6 +1,10 @@
 
 # holmesr <img src="data-raw/hex-logo/hex-logo.png" align="right" height="139"/>
 
+**This code is designed and shared for my own personal use and will
+always be a work in progress, with bugs, issues and outright errors\!
+Use at your own risk**
+
 The goal of `holmesr` is to collate (and make portable) a miscellany of
 my personal R functions.
 
@@ -15,15 +19,19 @@ Some of the more useful functions
       - `move_legend()`
       - `theme_holmes()`
   - Data wrangling
-      - `remove_otliers()`
+      - `remove_outliers()`
       - `print_all()`
 
 Install package, add it to the search path and set the plotting theme
 
 ``` r
+remotes::install_github('cj-holmes/holmesr')
+```
+
+``` r
 library(holmesr)
 
-# Set the homesr plotting theme
+# Set the holmesr plotting theme
 ggplot2::theme_set(theme_holmes())
 ```
 
@@ -36,7 +44,7 @@ the distributions of numeric and categorical columns in a dataframe.
 dists(ggplot2::diamonds)
 ```
 
-![](man/figures/README-unnamed-chunk-3-1.png)<!-- -->
+![](man/figures/README-unnamed-chunk-4-1.png)<!-- -->
 
 Ther are several arguments for customisation, including
 `remove_outliers` to remove outliers before numerical distirutions are
@@ -49,7 +57,7 @@ column) it is useful to not plot its distribution (below)…
 dists(dplyr::starwars, remove_outliers = TRUE, cols=c(-name, -sex))
 ```
 
-![](man/figures/README-unnamed-chunk-4-1.png)<!-- -->
+![](man/figures/README-unnamed-chunk-5-1.png)<!-- -->
 
 Arguments passed to `...` are passed on to `patchwork::wrap_plots` and
 control the layout of the visualisation (`ncol`, `nrow`, `widths`,
